@@ -1,0 +1,7 @@
+ {% extends 'base.html' %} {% load static %} {% block title %} Lista Usuarios {% endblock title %} {% block style %} {% endblock style %}
+<style>
+
+</style>
+
+{% block body %} {% for u in users %}
+<p>{{ u.email }}</p> {% endfor %} {% endblock body %}

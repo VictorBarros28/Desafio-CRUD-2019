@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Postagens {% endblock title %} {% block style %}
+<style>
+    .navbar {
+        background-color: aquamarine;
+    }
+</style>
+{% endblock style %} {% block body %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p>voce tem certeza?</p>
+    {{post.conteudo}}
+    <input type="submit" value="Deletar">
+</form>
+
+{%endblock body%}

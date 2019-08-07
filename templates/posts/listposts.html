@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Postagens {% endblock title %} {% block style %}
+<style>
+
+</style>
+{% endblock style %} {% block body %} {% for u in posts %}
+
+
+<p>{{ u.autor }}</p>
+<p> {{ u.conteudo }} </p>
+<p> {{ u.created_at }} </p>
+<p> {{ u.categoria }} </p>
+<a href="{% url 'posts:atualizaPosts' u.id %}">alterar post</a><br>
+<a href="{% url 'posts:deletaPosts' u.id %}">deletar post</a> {% empty %}
+<p>Você Não Postou nada, tururu</p>
+<a href="{% url 'posts:CriaPosts' %}">Criar post</a> {% endfor %} {% endblock body %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Criar Postagem {% endblock title %} {% block style %}
+<style>
+    .navbar {
+        background-color: aquamarine;
+    }
+</style>
+{% endblock style %} {% block body %}
+<form action="" method="post">
+    {% csrf_token %} {{form.as_p}}
+    <button>
+    enviar
+</button>
+</form>
+{% endblock body %}
