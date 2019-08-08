@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Comentarios {% endblock title %} {% block style %}
+
+{% endblock style %} {% block body %}
+ {% for l in listcomentarios %} 
+ {{l.comentario}} <br>
+  {{l.post}} <br><br> 
+  <div class = "btn-group">
+<a href="{% url 'comentarios:editaComentarios' l.id %}" class="btn btn-primary">Alterar Comentário</a>
+<a href="{% url 'comentarios:deletaComentarios' l.id %}" class = "btn btn-primary">Deletar Comentário</a>
+</div>
+<br>
+<br>
+
+{% endfor %} {% endblock body %}

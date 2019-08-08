@@ -1,0 +1,61 @@
+.bloquinho {
+    border: 2px solid black;
+    height: 260px;
+    width: 450px;
+    background-image: url("https://i.pinimg.com/originals/0d/a1/e0/0da1e00997d4e3b74ff40d06b7e3cf6a.gif");
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.cont {
+    display: flex;
+    justify-content: left;  
+    color:white;
+}
+#del{
+    background-color: green;
+    border: 2px solid black;
+
+}
+
+#alt{
+    background-color: yellow;
+    border: 2px solid black;
+    color:black
+
+}
+
+#delPost{
+    background-color: red;
+    border: 2px solid black;
+
+}
+.btn-group{
+    display:flex;
+    justify-content: center;
+}
+
+.autor{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    background-color:white;
+    color:black;
+}
+
+.post{
+    background-color: rgba(10,23,55,0.5);
+    height: 100%;
+}
+
+.created{
+    color:white;
+}
+
+.categ{
+    background-color: rgba(10,23,55,0.5);
+}

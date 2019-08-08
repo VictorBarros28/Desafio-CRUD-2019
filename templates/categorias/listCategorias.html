@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Postagens {% endblock title %} 
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/listCategorias.css' %}">
+
+{% endblock style %} 
+
+{% block body %} {% for u in categorias %}
+<div class="bloquinho">
+    <p>{{ u.categoria }}</p>
+
+</div>

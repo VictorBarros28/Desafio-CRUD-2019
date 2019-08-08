@@ -23,3 +23,9 @@
 .menu ul li a:hover {
     color: blueviolet;
 }
+
+.navbar-brand{
+    font-family: 'Teko', sans-serif;
+    font-size: 34px;
+       color:darkorange !important
+   }
