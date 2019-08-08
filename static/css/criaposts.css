@@ -1,0 +1,13 @@
+.autor{
+    background-color: brown;
+    width: 7%;
+    color: white;
+}
+
+.autor option{
+    color: black;
+}
+
+.autor select{
+    color: black;
+}

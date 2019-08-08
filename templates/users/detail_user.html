@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Postagens {% endblock title %} 
+
+{% block style %}
+{% endblock style %} {% block body %}
+
+<h1>Detalhes do Usuario:</h1>
+<p>Nome de Usuario: {{users.username}} </p>
+<p>Email: {{users.email}} </p>
+<p>Juntou-se em:{{users.created_at}} </p>
+<p>É membro de equipe?: {{users.is_staff}} </p>
+<p>Último Login: {{users.last_login}} </p>
+
+{% endblock body %}

@@ -57,7 +57,7 @@
                   <li><a href="{% url 'posts:CriaPosts' %}">Criar Post</a></li>
                   <li><a href="{% url 'categorias:CriaCategorias' %}">Criar Categoria</a></li>
                   <li><a href="{% url 'comentarios:CriaComentarios' %}">Comentar</a></li>
-                  <li><a href="#"> Olá,{{request.user}} </a></li>
+                  <li><a href="{% url 'users:detail_users' request.user.id %}"> Olá,{{request.user}} </a></li>
                   <li><a href="{% url 'users:logout_users' %}">Logout</a></li> 
                   
                   {% endif %}

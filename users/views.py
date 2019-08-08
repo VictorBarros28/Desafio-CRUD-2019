@@ -25,3 +25,8 @@ class UserSignupView(generic.CreateView):
     form_class = UserCreateForm
     template_name = 'users/signup_user.html'
     success_url = reverse_lazy('users:login_user')
+
+class UserDetailView(generic.DetailView):
+    model = User
+    context_object_name = 'users'
+    template_name = 'users/detail_user.html'

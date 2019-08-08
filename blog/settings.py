@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'posts',
     'categorias',
     'comentarios',
+
+    #third-party apps
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

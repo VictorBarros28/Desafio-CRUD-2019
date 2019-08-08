@@ -3,29 +3,8 @@
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/listPosts.css' %}">
 {% endblock style %} {% block body %} {% for u in posts %}
-<div class=box>
-    <div class="bloquinho">
-        <div class="post">
-        <p class= "autor">Autor: {{ u.autor }}</p>
-        <p class="cont"> {{ u.conteudo }} </p> <br><br><br><br><br><br><br>
-        <p class= "created"> {{ u.created_at }} </p>
-        <a class= "categ" href="{% url 'categorias:editaCategorias' u.categoria.id %}"> {{ u.categoria }} </a><br><br><br><br><br><br>
-        
-        <div class = "btn-group">
-        <a href="{% url 'posts:atualizaPosts' u.id %}" class="btn btn-primary" id="alt"> alterar post</a><br>
-        <a href="{% url 'posts:deletaPosts' u.id %}" class="btn btn-primary" id="delPost">deletar post</a><br>
-        <a href="{% url 'categorias:deletaCategorias' u.categoria.id %}" class="btn btn-primary" id="del">deletar categoria</a>
-    </div>
-    </div>
+{%include 'includes/cards.html'%}
 
-    </div>
-
-
-    {% for x in listcomentarios %} Bla: {{ x.comentario }} {{x.post}} {% endfor %}
-
-
-
-</div>
 {% empty %}
 <p>Você Não Postou nada, tururu</p>
 <a href="{% url 'posts:CriaPosts' %}">Criar post</a> {% endfor %} {% endblock body %}
