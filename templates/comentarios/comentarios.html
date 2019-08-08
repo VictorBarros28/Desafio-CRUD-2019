@@ -1,9 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% block title %} Comentar {% endblock title %} {% block style %}
-<style>
-    .navbar {
-        
-    }
-</style>
+
 {% endblock style %} {% block body %}
 <form action="" method="post">
     {% csrf_token %} {{form.as_p}}

@@ -24,8 +24,8 @@
     color: blueviolet;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-family: 'Teko', sans-serif;
-    font-size: 34px;
-       color:darkorange !important
+    font-size: 34px !important;
+    color: red !important
    }

@@ -88,6 +88,9 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+LOGIN_URL = 'users:login_users'
+LOGIN_REDIRECT_URL = 'posts:CriaPosts'
+LOGOUT_REDIRECT_URL = 'users:login_users'
 
 
 # Password validation

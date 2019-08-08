@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Registrar {% endblock title %} {% block style %}
+
+{% endblock style %} {% block body %}
+<div class = "box">
+<form class = "frm" action="" method="post">
+    {% csrf_token %} {{form.as_p}}
+    <input class= "botao" type="submit" value="Registrar">
+</form>
+</div>
+{% endblock body %}

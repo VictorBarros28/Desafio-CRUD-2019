@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Lista Usuarios {% endblock title %} {% block style %} {% endblock style %}
+<style>
+
+</style>
+
+{% block body %}
+
+<form method="post">
+{% csrf_token %}
+{{form.as_p}}
+
+<input type="submit" value="logar">
+</form>
+
+
+{% endblock body %}

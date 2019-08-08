@@ -17,14 +17,7 @@
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-   <style>
-   .navbar-brand{
-    font-family: 'Teko', sans-serif;
-    font-size: 34px;
-       color:darkorange !important
-   }
-   
-   </style>
+  
 </head>
 
 <body>
@@ -40,7 +33,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>                        
             </button>
-            <a class="navbar-brand" href="{% url 'core:index' %}">Blog do Goku</a>
+
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -48,11 +41,27 @@
               <!-- <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                 <ul class="dropdown-menu"> -->
-                        <li><a href="{% url 'posts:ListPosts' %}">Postagens</a></li>
-                        <li><a href="{% url 'comentarios:ListaComentarios' %}">Lista de Comentarios</a></li>
-                        <li><a href="{% url 'posts:CriaPosts' %}">Criar Post</a></li>
-                        <li><a href="{% url 'categorias:CriaCategorias' %}">Criar Categoria</a></li>
-                        <li><a href="{% url 'comentarios:CriaComentarios' %}">Comentar</a></li>
+                  {% if not request.user.is_authenticated %}
+                  <li><a class="navbar-brand" href="{% url 'users:login_users' %}"> AutoBlog </a></li> 
+                  <li><a href="{% url 'posts:ListPosts' %}">Postagens</a></li>
+                  <li><a href="{% url 'comentarios:ListaComentarios' %}">Lista de Comentarios</a></li>
+                  <li><a href="{% url 'posts:CriaPosts' %}">Criar Post</a></li>
+                  <li><a href="{% url 'categorias:CriaCategorias' %}">Criar Categoria</a></li>
+                  <li><a href="{% url 'comentarios:CriaComentarios' %}">Comentar</a></li>
+                  <li><a href="{% url 'users:register_users' %}">Registre-se</a></li>
+                  
+                  {% else %}
+                  <li><a class="navbar-brand" href="#"> AutoBlog </a></li> 
+                  <li><a href="{% url 'posts:ListPosts' %}">Postagens</a></li>
+                  <li><a href="{% url 'comentarios:ListaComentarios' %}">Lista de Comentarios</a></li>
+                  <li><a href="{% url 'posts:CriaPosts' %}">Criar Post</a></li>
+                  <li><a href="{% url 'categorias:CriaCategorias' %}">Criar Categoria</a></li>
+                  <li><a href="{% url 'comentarios:CriaComentarios' %}">Comentar</a></li>
+                  <li><a href="#"> Olá,{{request.user}} </a></li>
+                  <li><a href="{% url 'users:logout_users' %}">Logout</a></li> 
+                  
+                  {% endif %}
+
                 </ul>
             </ul>
       </nav>

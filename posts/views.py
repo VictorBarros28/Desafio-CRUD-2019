@@ -4,6 +4,7 @@ from django.views.generic import ListView,CreateView,DeleteView
 from django.views import generic
 from django.urls import reverse_lazy
 from posts.forms import PostCreateForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -13,20 +14,20 @@ class ListPostsView(ListView):
     template_name = 'posts/listposts.html'
     ordering = ['-created_at',]
 
-class PostCreateView(generic.CreateView):
+class PostCreateView(LoginRequiredMixin,generic.CreateView):
     model = Post
     form_class = PostCreateForm
     template_name = 'posts/criaposts.html'
     success_url = reverse_lazy('posts:ListPosts')
 
 
-class PostUpdateView(generic.UpdateView):
+class PostUpdateView(LoginRequiredMixin,generic.UpdateView):
     model = Post
     fields = ['autor', 'conteudo','categoria'] 
     template_name = 'posts/edit.html'
     success_url = reverse_lazy('posts:ListPosts')
 
-class PostDeleteView(generic.DeleteView):
+class PostDeleteView(LoginRequiredMixin,generic.DeleteView):
     model = Post
     context_object_name = 'posts'
     template_name = 'posts/delete.html'
