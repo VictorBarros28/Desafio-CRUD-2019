@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from posts.models import Post
 from django.views.generic import ListView,CreateView,DeleteView
 from django.views import generic
@@ -32,3 +32,8 @@ class PostDeleteView(LoginRequiredMixin,generic.DeleteView):
     context_object_name = 'posts'
     template_name = 'posts/delete.html'
     success_url = reverse_lazy('posts:ListPosts')
+
+class PostDetailView(generic.DetailView):
+    model = Post
+    context_object_name = 'posts'
+    template_name = 'posts/detail.html'

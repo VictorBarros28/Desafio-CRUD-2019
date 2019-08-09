@@ -2,11 +2,12 @@
 <link rel="stylesheet" href="{% static 'css/criaposts.css' %}">
 {% endblock style %} {% block body %}
 <div class = "box">
-<form class = "frm" action="" method="post">
+<form class = "frm" action="" method="post" enctype="multipart/form-data">
     {% csrf_token %} 
     <p class = "autor">Autor: {% render_field form.autor %}</p>
     <p>Conteudo : {% render_field form.conteudo %}</p>
     <p>Categoria: {% render_field form.categoria %}</p>
+    <p>IMG: {% render_field form.imagem %}</p>
     <!-- {{form.as_p}} -->
     <input class= "botao" type="submit" value="enviar">
 </form>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Postagens {% endblock title %} 
+
+{% block style %}
+{% endblock style %} {% block body %}
+
+<h1>Comentarios do Post:</h1><br>
+
+
+<p>Post {{posts.id}}  |  Autor: {{posts.autor}} | Criado em: {{posts.created_at}}</p>
+{% for u in posts.commentsFromPost.all %}
+
+
+    <p>comentario: {{u.comentario}} </p>
+    {% empty %}
+    <p> Sem Comentarios </p>
+
+{% endfor %}
+{% endblock body %}

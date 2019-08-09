@@ -8,6 +8,18 @@
 <p>Email: {{users.email}} </p>
 <p>Juntou-se em:{{users.created_at}} </p>
 <p>É membro de equipe?: {{users.is_staff}} </p>
-<p>Último Login: {{users.last_login}} </p>
+<p>Último Login: {{users.last_login}} </p><br>
+
+<h4>Posts do Usuario:</h4><br>
+{% for u in users.PostsFromAuthor.all %}
+
+
+    <p>Post: {{u.id}}  |  Autor: {{u.autor}} | Criado em: {{u.created_at}} | conteudo: {{u.conteudo}}  </p>
+    
+    {% empty %}
+    <p> Sem Posts </p>
+
+{% endfor %}
+
 
 {% endblock body %}

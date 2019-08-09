@@ -2,9 +2,17 @@
         <div class="bloquinho">
             <div class="post">
             <p class= "autor">Autor: {{ u.autor }}</p>
+            {% if u.imagem %}
+
+            <p><img src = "{{u.imagem.url}}"> </p>
+
+            {% endif %}
+
             <p class="cont"> {{ u.conteudo }} </p> <br><br><br><br><br><br><br>
             <p class= "created"> {{ u.created_at }} </p>
-            <a class= "categ" href="{% url 'categorias:editaCategorias' u.categoria.id %}"> {{ u.categoria }} </a><br><br><br><br><br><br>
+            <a class= "categ" href="{% url 'categorias:editaCategorias' u.categoria.id %}"> {{ u.categoria }} </a>
+            <a class= "coment" href="{% url 'posts:detalhaPosts' u.id %}"> Comentarios </a>
+            <br><br><br><br><br><br>
             
             <div class = "btn-group">
             <a href="{% url 'posts:atualizaPosts' u.id %}" class="btn btn-primary" id="alt"> alterar post</a><br>
